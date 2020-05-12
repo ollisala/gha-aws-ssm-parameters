@@ -16,7 +16,7 @@ on:
   push
 
 jobs:
-  aws-ssm-to-env:
+  gha-aws-ssm-parameters:
     runs-on: ubuntu-latest
     steps:
       - name: aws-ssm-to-env
