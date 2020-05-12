@@ -31,4 +31,4 @@ jobs:
           parameter_name: 'TesTing-parameters'
 ```
 
-Example above will set environmental variable `AWS_SSM_TESTING_PARAMETERS`.
+Example above will set environmental variable `TESTING_PARAMETERS`.
