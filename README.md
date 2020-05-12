@@ -19,7 +19,7 @@ jobs:
   gha-aws-ssm-parameters:
     runs-on: ubuntu-latest
     steps:
-      - name: aws-ssm-to-env
+      - name: gha-aws-ssm-parameters
         uses: ollisala/gha-aws-ssm-parameters@master
         env:
           AWS_REGION: ${{ secrets.AWS_REGION }}
