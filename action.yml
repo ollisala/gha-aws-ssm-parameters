@@ -1,0 +1,10 @@
+name: 'Parse AWS SSM parameters'
+description: 'Parse AWS Parameter store parameters to environment variables'
+author: 'ollisala'
+inputs:
+  ssm_parameter:
+    description: 'AWS Systems Manager parameter name (path).'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
