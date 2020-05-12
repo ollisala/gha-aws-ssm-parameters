@@ -7,17 +7,17 @@ if [[ -z "$AWS_REGION" ]] || [[ -z "$AWS_ACCESS_KEY_ID" ]] || [[ -z "$AWS_SECRET
   exit 1
 fi
 
-if [[ -z "$INPUT_SSM_PARAMETER" ]]; then
+if [[ -z "$INPUT_PARAMETER_NAME" ]]; then
   echo "Set SSM parameter name (parameter_name) value."
   exit 1
 fi
 
 region="$AWS_REGION"
-parameter_name="$INPUT_SSM_PARAMETER"
+parameter_name="$INPUT_PARAMETER_NAME"
 ssm_param=$(aws ssm get-parameter --region "$region" --name "$parameter_name")
 
 format_var_name () {
-  echo "$1" | tr "[:lower:]" "[:upper:]"
+  echo "$1" | tr - _ | tr "[:lower:]" "[:upper:]"
 }
 
 var_name=$(echo "$ssm_param" | jq -r '.Parameter.Name' | awk -F/ '{print $NF}')

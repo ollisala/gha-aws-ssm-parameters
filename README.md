@@ -1,5 +1,7 @@
 # gha-aws-ssm-parameters
-Fetch SSM parameters to Environment variable
+Fetch SSM parameters to Environment variable.
+
+Replaces "-" with "_" and makes environment variable as upper case.
 
 ### Parameters
 
@@ -26,7 +28,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         with:
-          parameter_name: 'testing_parameters'
+          parameter_name: 'TesTing-parameters'
 ```
 
 Example above will set environmental variable `AWS_SSM_TESTING_PARAMETERS`.
